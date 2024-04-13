@@ -1,8 +1,6 @@
-import java.util.*;
-
-public class duplicateNum {
-    public static ArrayList<Integer> duplicate(int[] nums) {
-        ArrayList<Integer> list= new ArrayList<Integer>();
+import java.util.Arrays;
+public class setMismatch {
+    public static int[] mismatch(int[] nums) {
         int temp;
         int i = 0;
         while (i < nums.length) {
@@ -20,16 +18,16 @@ public class duplicateNum {
         
         for (int j = 0; j < nums.length; j++) {
             if (nums[j] !=j+1 ) {
-                list.add(nums[j]);
+                return new int[] {nums[j],j+1};
             }
         }
-        return list;
+        return new int[] {};
     }
 
 
 
     public static void main(String[] args) {
-        int[] nums = {4,3,2,7,8,2,3,1}; //{1,2,3,4,3,2,7,8}
-        System.out.println(duplicate(nums));
+        int[] nums = {1,1}; //{1,2,3,4,3,2,7,8}
+        System.out.println(Arrays.toString(mismatch(nums)));
     }
 }
